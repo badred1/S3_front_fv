@@ -1,0 +1,73 @@
+<br><br><br><br>
+<app-services-list></app-services-list>
+<hr>
+<div class="container">
+
+
+<div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <button 
+            type="submit" 
+            class="btn btn-success"
+            [disabled]="!serviceForm.valid">Enregistrer</button>
+            <button 
+            type="button" 
+            class="btn btn-danger"
+            (click)="onCancel()">Annuler</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="serviceType">Type service</label>
+              <input 
+                type="text"
+                id="serviceType"
+                formControlName="serviceType"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="imagePath">URL Image</label>
+              <input 
+                type="text"
+                id="imagePath"
+                formControlName="imagePath"
+                class="form-control"
+                #imagePath>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <img 
+            [src]="imagePath.value" 
+            class="img-responsive"
+            style= "max-height: 200px;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea 
+                type="text"
+                id="description"
+                formControlName="description"
+                class="form-control"
+                rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+    
+      </form>
+    </div>
+  </div>
+</div>
